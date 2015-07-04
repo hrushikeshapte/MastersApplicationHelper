@@ -12,17 +12,84 @@
 </head>
 <body>
 <div ng-app = "MSApp" ng-controller ="mainController">
-    <div class="container" ng-app="MSApp" ng-controller="mainController">
+    <div class="container" ng-app="MSApp" ng-controller="mainController" ng-init = "init()">
 
         <h1>Welcome to the app</h1>
-        <input type="text" class="form-control input-lg text-center" placeholder="email" ng-model="formInfo.text">
-        <button type="submit" class="btn btn-primary btn-lg" ng-click="createInformation()">Add</button>
+
+        <div class="question" ng-show="one">
+            Enter your email<br/>
+            <input type="text" class="form-control input-lg text-center" placeholder="email" ng-model="email" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="emailInformation()">Next</button>
+        </div>
+
+        <div class="question" ng-show="two">
+            Enter your Quant GRE Score<br/>
+            <input type="text" class="form-control input-lg text-center" placeholder="quant" ng-model="quant" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="quantInformation()">Next</button>
+        </div>
+
+        <div class="question" ng-show="three">
+            Enter your Verbal GRE Score
+            <input type="text" class="form-control input-lg text-center" placeholder="verbal" ng-model="verbal" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="verbalInformation()">Next</button>
+        </div>
+
+
+        <div class="question" ng-show="four">
+            Enter your total GRE score
+            <input type="text" class="form-control input-lg text-center" placeholder="total" ng-model="total" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="totalInformation()">Next</button>
+        </div>
+
+
+        <div class="question" ng-show="five">
+            Enter your TOEFl
+            <input type="text" class="form-control input-lg text-center" placeholder="TOEFL" ng-model="toefl" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="toeflInformation()">Next</button>
+        </div>
+
+
+        <div class="question" ng-show="six">
+            Enter your Undergraduate Marks
+            <input type="text" class="form-control input-lg text-center" placeholder="UG" ng-model="marks" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="marksInformation()">Next</button>
+        </div>
+
+
+        <div class="question" ng-show="seven">
+            Enter your Work Experience in years
+            <input type="text" class="form-control input-lg text-center" placeholder="work-years" ng-model="years" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="workYearsInformation()">Next</button>
+        </div>
+
+        <div class="question" ng-show="eight">
+            Is your work ex in relevant field ?
+            <input type="text" class="form-control input-lg text-center" placeholder="relevance" ng-model="relevance" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="relevanceInformation()">Next</button>
+        </div>
+
+
+        <div class="question" ng-show="nine">
+            Does your company have more than 500 employees or is your company a fortune 500 company ?
+            <input type="text" class="form-control input-lg text-center" placeholder="company fortune 500" ng-model="company" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="companyInformation()">Next</button>
+        </div>
+
+
+        <div class="question" ng-show="ten">
+            Do you have any IEEE papaers published ?
+            <input type="text" class="form-control input-lg text-center" placeholder="IEEE papaer" ng-model="paper" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="paperInformation()">Next</button>
+        </div>
+
+        <div class="question" ng-show="eleven">
+            Have you done any voluntary or NGO work ?
+            <input type="text" class="form-control input-lg text-center" placeholder="Voluntary Work" ng-model="voluntary" novalidate>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="voluntaryInformation()">Next</button>
+        </div>
 
 
     </div>
-
-    <input ng-model ="test"/>
-    {{test}}
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
     <script type="text/javascript" src="/js/controllers/mainController.js"></script>
