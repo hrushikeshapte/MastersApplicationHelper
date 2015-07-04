@@ -16,76 +16,82 @@
 
         <h1>Welcome to the app</h1>
 
+        <h2>Question {{question}}</h2>
+
         <div class="question" ng-show="one">
             Enter your email<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="email" ng-model="email" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="emailInformation()">Next</button>
         </div>
 
-        <div class="question" ng-show="two">
+       <div class="question" ng-show="two">
             Enter your Quant GRE Score<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="quant" ng-model="quant" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="quantInformation()">Next</button>
         </div>
 
         <div class="question" ng-show="three">
-            Enter your Verbal GRE Score
+            Enter your Verbal GRE Score<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="verbal" ng-model="verbal" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="verbalInformation()">Next</button>
         </div>
 
 
         <div class="question" ng-show="four">
-            Enter your total GRE score
+            Enter your total GRE score<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="total" ng-model="total" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="totalInformation()">Next</button>
         </div>
 
 
         <div class="question" ng-show="five">
-            Enter your TOEFl
+            Enter your TOEFl<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="TOEFL" ng-model="toefl" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="toeflInformation()">Next</button>
         </div>
 
 
         <div class="question" ng-show="six">
-            Enter your Undergraduate Marks
+            Enter your Undergraduate Marks<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="UG" ng-model="marks" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="marksInformation()">Next</button>
         </div>
 
 
         <div class="question" ng-show="seven">
-            Enter your Work Experience in years
+            Enter your Work Experience in years<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="work-years" ng-model="years" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="workYearsInformation()">Next</button>
         </div>
 
         <div class="question" ng-show="eight">
-            Is your work ex in relevant field ?
+            Is your work ex in relevant field ?<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="relevance" ng-model="relevance" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="relevanceInformation()">Next</button>
         </div>
 
 
         <div class="question" ng-show="nine">
-            Does your company have more than 500 employees or is your company a fortune 500 company ?
+            Does your company have more than 500 employees or is your company a fortune 500 company ?<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="company fortune 500" ng-model="company" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="companyInformation()">Next</button>
         </div>
 
 
         <div class="question" ng-show="ten">
-            Do you have any IEEE papaers published ?
+            How many IEEE papaers have you published ?<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="IEEE papaer" ng-model="paper" novalidate>
             <button type="submit" class="btn btn-primary btn-lg" ng-click="paperInformation()">Next</button>
         </div>
 
         <div class="question" ng-show="eleven">
-            Have you done any voluntary or NGO work ?
+            Have you done any voluntary or NGO work ?<br/>
             <input type="text" class="form-control input-lg text-center" placeholder="Voluntary Work" ng-model="voluntary" novalidate>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="voluntaryInformation()">Next</button>
+            <button type="submit" class="btn btn-primary btn-lg" ng-click="voluntaryInformation()">Submit</button>
+        </div>
+
+        <div ng-show="twelve">
+            Thank you for submitting your answers.
         </div>
 
 
