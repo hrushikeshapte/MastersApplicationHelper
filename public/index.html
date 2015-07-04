@@ -1,0 +1,31 @@
+
+<!DOCTYPE>
+<html>
+<head>
+    <title>
+        MS in US Application
+    </title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+
+
+</head>
+<body>
+<div ng-app = "MSApp" ng-controller ="mainController">
+    <div class="container" ng-app="MSApp" ng-controller="mainController">
+
+        <h1>Welcome to the app</h1>
+        <input type="text" class="form-control input-lg text-center" placeholder="email" ng-model="formInfo.text">
+        <button type="submit" class="btn btn-primary btn-lg" ng-click="createInformation()">Add</button>
+
+
+    </div>
+
+    <input ng-model ="test"/>
+    {{test}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script type="text/javascript" src="/js/controllers/mainController.js"></script>
+</div>
+</body>
+</html>
