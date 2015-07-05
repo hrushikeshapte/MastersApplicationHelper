@@ -15,7 +15,7 @@ app.controller("mainController", function ($scope, $http) {
         $scope.toefl = 100;
         $scope.years = 0;
         $scope.paper = 0;
-
+        $scope.gpa = 1;
     };
 
     $scope.emailInformation = function(){
@@ -49,8 +49,30 @@ app.controller("mainController", function ($scope, $http) {
     $scope.toeflInformation = function(){
         $scope.five = false;
         $scope.six = true;
+        $scope.selection = true;
         $scope.info[i++] = $scope.toefl;
         $scope.question = 6 ;
+    };
+
+    $scope.selectionInformation = function() {
+        if($scope.selection == "1"){
+            $scope.gpaSelect = true;
+            $scope.selection = false;
+            $scope.class = false;
+        }
+
+        else{
+            $scope.class=true;
+            $scope.selection = false;
+            $scope.gpaSelect = false;
+        }
+    }
+
+    $scope.gpaInformation = function(){
+        $scope.six = false;
+        $scope.seven  = true;
+        $scope.info[i++] = $scope.gpa;
+        $scope.question = 7 ;
     };
 
     $scope.marksInformation = function(){
