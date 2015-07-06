@@ -118,11 +118,12 @@ app.controller("mainController", function ($scope, $http) {
 
         $http.post('/info',$scope.info)
             .success(function(data) {
-                console.log(data);
+                $scope.results = data ;
             })
             .error(function(data) {
                 alert("Cannot get response from server");
             });
+
     }
 
 });

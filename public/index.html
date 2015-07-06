@@ -170,6 +170,10 @@
 
         <div ng-show="twelve">
             Thank you for submitting your answers.
+            </br></br>Here is your list : </br>
+            <div ng-repeat="result in results track by $index">
+             {{result.name}}
+             </div>
         </div>
 
 
