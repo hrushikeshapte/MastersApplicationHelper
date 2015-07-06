@@ -9,17 +9,20 @@
     <!-- load jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
     <script type="text/javascript" src="/js/controllers/mainController.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
 
 </head>
 <body>
 <div ng-app="MSApp" ng-controller="mainController">
-    <div class="container" ng-app="MSApp" ng-controller="mainController" ng-init="init()">
+    <div class="container text-center" ng-app="MSApp" ng-controller="mainController" ng-init="init()">
 
         <h1>Welcome to the app</h1>
 
         <h2>Question {{question}}</h2>
 
-            <div ng-show="one" ng-form="myFormEmail" novalidate>
+        <div ng-show="one" ng-form="myFormEmail" novalidate>
             <p>Enter your Email:<br>
                 <input type="email" name="email" ng-model="email" required>
                 <span style="color:red" ng-show="myFormEmail.email.$dirty && myFormEmail.email.$invalid">
@@ -29,26 +32,27 @@
             </p>
 
             <p>
-                <input type="submit"
+                <input type="submit" class="btn btn-primary"
                        ng-disabled="myFormEmail.user.$dirty && myFormEmail.user.$invalid ||
-                       myFormEmail.email.$dirty && myFormEmail.email.$invalid" ng-click="emailInformation()" value="Next">
+                       myFormEmail.email.$dirty && myFormEmail.email.$invalid" ng-click="emailInformation()"
+                       value="Next">
             </p>
 
         </div>
 
         <div class="question" ng-show="two" ng-form="myFormQuant" novalidate>
             Enter your Quant GRE Score<br/>
-            <input type="number" name="quant" class="form-control input-lg text-center" placeholder="quant" ng-model="quant" min="130" max="170"  required>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="quantInformation()"
+            <input type="number" name="quant" placeholder="quant" ng-model="quant" min="130" max="170" required></br></br>
+            <button type="submit" class="btn btn-primary" ng-click="quantInformation()"
                     ng-disabled="myFormQuant.quant.$invalid && myFormQuant.quant.$dirty">Next
             </button>
         </div>
 
         <div class="question" ng-show="three" ng-form="myFormVerbal" novalidate>
             Enter your Verbal GRE Score<br/>
-            <input type="number" name="verbal" class="form-control input-lg text-center" placeholder="verbal" ng-model="verbal" min="130" max="170"
-                   required>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="verbalInformation()"
+            <input type="number" name="verbal" placeholder="verbal" ng-model="verbal" min="130" max="170"
+                   required></br></br>
+            <button type="submit" class="btn btn-primary" ng-click="verbalInformation()"
                     ng-disabled="myFormVerbal.verbal.$dirty && myFormVerbal.verbal.$invalid">Next
             </button>
         </div>
@@ -56,8 +60,8 @@
 
         <div class="question" ng-show="four" ng-form="myFormTotal">
             Enter your total GRE score<br/>
-            <input type="number" class="form-control input-lg text-center" placeholder="total" ng-model="total" min="260" max="340" required>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="totalInformation()"
+            <input type="number" placeholder="total" ng-model="total" min="260" max="340" required></br></br>
+            <button type="submit" class="btn btn-primary" ng-click="totalInformation()"
                     ng-disabled="myFormTotal.$dirty && myFormTotal.$invalid">Next
             </button>
         </div>
@@ -65,44 +69,47 @@
 
         <div class="question" ng-show="five" ng-form="myFormTOEFL">
             Enter your TOEFl<br/>
-            <input type="number" class="form-control input-lg text-center" placeholder="TOEFL" ng-model="toefl" min="30" max="120" required>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="toeflInformation()"
+            <input type="number" placeholder="TOEFL" ng-model="toefl" min="30" max="120" required></br></br>
+            <button type="submit" class="btn btn-primary" ng-click="toeflInformation()"
                     ng-disabled="myFormTOEFL.$dirty && myFormTOEFL.$invalid">Next
             </button>
         </div>
 
 
         <div class="question" ng-show="six">
-            <div ng-show="selection" ng-form = "myForm" novalidate>
-            Choose your option<br/>
-                <input type="radio"  name="selection1" ng-model="selection"  value="1">GPA </br>
-                <input type="radio"  name="selection2" ng-model="selection" value ="2">Marks Class (example first class)
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="selectionInformation()"
-                    ng-disabled="myForm.$dirty && myForm.$invalid">Next
-            </button>
+            <div ng-show="selection" ng-form="myForm" novalidate>
+                Choose your option<br/>
+                <input type="radio" name="selection1" ng-model="selection" value="1">GPA </br>
+                <input type="radio" name="selection2" ng-model="selection" value="2">Marks Class (example first class)</br></br>
+                <button type="submit" class="btn btn-primary" ng-click="selectionInformation()"
+                        ng-disabled="myForm.$dirty && myForm.$invalid">Next
+                </button>
             </div>
 
 
-                      <div ng-show="gpaSelect" name="myForm" novalidate>
-                    <input type="number" step="0.1" class="form-control input-lg text-center" placeholder="GPA" name="gpa" ng-model="gpa" ng-required="true" min="1" max="4">
+            <div ng-show="gpaSelect" name="myForm" novalidate>
+                <input type="number" step="0.1" placeholder="GPA" name="gpa" ng-model="gpa" ng-required="true" min="1"
+                       max="4"></br></br>
 
-                      <button type="submit" class="btn btn-primary btn-lg" ng-click="gpaInformation()"
-                              ng-disabled="!gpa">Next
-                      </button>
-                  </div >
+                <button type="submit" class="btn btn-primary" ng-click="gpaInformation()"
+                        ng-disabled="!gpa">Next
+                </button>
+            </div>
 
             <div ng-show="class" name="myForm" novalidate>
 
-                    <input type="radio" class="form-control input-lg text-center" placeholder="UG" name="radioMarks" ng-model="marks" ng-required="true" value="65">Distinction</br>
-                    <input type="radio" class="form-control input-lg text-center" placeholder="UG" name="radioMarks" ng-model="marks" ng-required="true" value="60">First Class</br>
-                    <input type="radio" class="form-control input-lg text-center" placeholder="UG" name="radioMarks" ng-model="marks" ng-required="true" value="55">Higher Second Class </br>
-                    <input type="radio" class="form-control input-lg text-center" placeholder="UG" name="radioMarks" ng-model="marks" ng-required="true" value="50">Second Class </br>
-                    <input type="radio" class="form-control input-lg text-center" placeholder="UG" name="radioMarks" ng-model="marks" ng-required="true" value="45">Pass Class</br></br>
+                <input type="radio" name="radioMarks" ng-model="marks" ng-required="true" value="65">Distinction</br>
+                <input type="radio" name="radioMarks" ng-model="marks" ng-required="true" value="60">First Class</br>
+                <input type="radio" name="radioMarks" ng-model="marks" ng-required="true" value="55">Higher Second
+                Class </br>
+                <input type="radio" name="radioMarks" ng-model="marks" ng-required="true" value="50">Second Class </br>
+                <input type="radio" name="radioMarks" ng-model="marks" ng-required="true" value="45">Pass
+                Class</br></br>
 
-                      <button type="submit" class="btn btn-primary btn-lg" ng-click="marksInformation()"
-                              ng-disabled="!marks">Next
-                      </button>
-                  </div>
+                <button type="submit" class="btn btn-primary" ng-click="marksInformation()"
+                        ng-disabled="!marks">Next
+                </button>
+            </div>
 
 
         </div>
@@ -110,20 +117,20 @@
 
         <div class="question" ng-show="seven" ng-form="myForm">
             Enter your Work Experience in years<br/>
-            <input type="number" class="form-control input-lg text-center" placeholder="work-years" ng-model="years"
-                   required>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="workYearsInformation()"
+            <input type="number" ng-model="years"
+                   required></br></br>
+            <button type="submit" class="btn btn-primary" ng-click="workYearsInformation()"
                     ng-disabled="myForm.$dirty && myForm.$invalid">Next
             </button>
         </div>
 
         <div class="question" ng-show="eight" ng-form="myForm">
             Is your work ex in relevant field ?<br/>
-            <input type="radio" class="form-control input-lg text-center" placeholder="relevance" ng-model="relevance" value="yes"
-                   ng-required ="true"> Yes
-            <input type="radio" class="form-control input-lg text-center" placeholder="relevance" ng-model="relevance" value="no"
-                   ng-required ="true"> No
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="relevanceInformation()"
+            <input type="radio" ng-model="relevance" value="yes"
+                   ng-required="true"> Yes
+            <input type="radio" ng-model="relevance" value="no"
+                   ng-required="true"> No</br></br>
+            <button type="submit" class="btn btn-primary" ng-click="relevanceInformation()"
                     ng-disabled="!relevance">Next
             </button>
         </div>
@@ -131,11 +138,11 @@
 
         <div class="question" ng-show="nine" ng-form="myForm">
             Does your company have more than 500 employees or is your company a fortune 500 company ?<br/>
-            <input type="radio" class="form-control input-lg text-center" placeholder="company fortune 500"
+            <input type="radio"
                    ng-model="company" value="yes" ng-required="true"> Yes
-            <input type="radio" class="form-control input-lg text-center" placeholder="company fortune 500"
-                   ng-model="company" value="no" ng-required="true"> No
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="companyInformation()"
+            <input type="radio"
+                   ng-model="company" value="no" ng-required="true"> No</br></br>
+            <button type="submit" class="btn btn-primary" ng-click="companyInformation()"
                     ng-disabled="!company">Next
             </button>
         </div>
@@ -143,20 +150,20 @@
 
         <div class="question" ng-show="ten" ng-form="myForm">
             How many IEEE papaers have you published ?<br/>
-            <input type="number" class="form-control input-lg text-center" placeholder="IEEE papaer" ng-model="paper"
-                   required>
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="paperInformation()"
+            <input type="number" ng-model="paper"
+                   required></br></br>
+            <button type="submit" class="btn btn-primary " ng-click="paperInformation()"
                     ng-disabled="myForm.$dirty && myForm.$invalid">Next
             </button>
         </div>
 
         <div class="question" ng-show="eleven" ng-form="myForm">
             Have you done any voluntary or NGO work ?<br/>
-            <input type="radio" class="form-control input-lg text-center" placeholder="Voluntary Work" value="yes"
+            <input type="radio" value="yes"
                    ng-model="voluntary" ng-required="true"> Yes
-            <input type="radio" class="form-control input-lg text-center" placeholder="Voluntary Work" value="no"
-                   ng-model="voluntary" ng-required="true"> No
-            <button type="submit" class="btn btn-primary btn-lg" ng-click="voluntaryInformation()"
+            <input type="radio" value="no"
+                   ng-model="voluntary" ng-required="true"> No</br></br>
+            <button type="submit" class="btn btn-primary" ng-click="voluntaryInformation()"
                     ng-disabled="!voluntary">Submit
             </button>
         </div>
