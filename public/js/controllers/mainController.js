@@ -16,6 +16,7 @@ app.controller("mainController", function ($scope, $http) {
         $scope.years = 0;
         $scope.paper = 0;
         $scope.gpa = 1;
+        $scope.quest = true;
     };
 
     $scope.emailInformation = function(){
@@ -114,6 +115,7 @@ app.controller("mainController", function ($scope, $http) {
     $scope.voluntaryInformation = function(){
         $scope.eleven = false;
         $scope.twelve = true;
+        $scope.quest = false
         $scope.info[i++] = $scope.voluntary;
 
         $http.post('/info',$scope.info)
